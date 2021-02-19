@@ -4,7 +4,7 @@ SQLAlchemy models and utility functions for Twittoff
 """
 
 from flask_sqlalchemy import SQLAlchemy
-from .twitter import add_or_update_user
+# from .twitter import add_or_update_user
 
 DB = SQLAlchemy()  # an instance of a database class
 
@@ -44,9 +44,9 @@ class Tweet(DB.Model):
     def __repr__(self):
         return "<Tweet: {}>".format(self.text)
 
-def insert_example_user():
-    """We will get an error if we run this twice without dropping and creating"""
-    user1 = add_or_update_user("elonmusk")
+# def insert_example_user():
+#     """We will get an error if we run this twice without dropping and creating"""
+#     user1 = add_or_update_user("elonmusk")
 
 
 
