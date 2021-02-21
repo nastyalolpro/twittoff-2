@@ -18,8 +18,8 @@ def create_app():
     app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 
     DB.init_app(app)
-    # DB.create_all()
-    # DB.session.commit()
+    DB.drop_all()
+    DB.create_all()
 
     @app.route('/')  # adds a specific url to an associated function
     def root():
