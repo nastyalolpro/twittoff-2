@@ -4,9 +4,11 @@ SQLAlchemy models and utility functions for Twittoff
 """
 
 from flask_sqlalchemy import SQLAlchemy
+from flask_migrate import Migrate
 # from .twitter import add_or_update_user
 
 DB = SQLAlchemy()  # an instance of a database class
+migrate = Migrate()
 
 
 class User(DB.Model):
@@ -15,7 +17,7 @@ class User(DB.Model):
      Args:
         DB ([type]): [description]
     """
-    __tablename__ = 'user'
+    # __tablename__ = 'user'
 
     id = DB.Column(DB.BigInteger, primary_key=True)  # id column - primary key
     name = DB.Column(DB.String, nullable=False)  # name column - string, not null
@@ -31,7 +33,7 @@ class Tweet(DB.Model):
     Args:
         DB ([type]): [description]
     """
-    __tablename__ = 'tweet'
+    # __tablename__ = 'tweet'
 
     id = DB.Column(DB.BigInteger, primary_key=True)  # id column - primary key
     text = DB.Column(DB.Unicode(300))
