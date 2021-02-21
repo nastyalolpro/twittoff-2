@@ -1,7 +1,7 @@
 """Main app/routing file for Twittoff"""
 import os
 from dotenv import load_dotenv
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, flash
 from .models import DB, User
 from .predict import predict_user
 from .twitter import add_or_update_user, update_all_users
@@ -55,6 +55,7 @@ def create_app():
             if request.method == "POST":
                 add_or_update_user(name)
                 message = "User {} was successfully added!".format(name)
+                # flash("User {} added successfully".format(name), "success")
 
             tweets = User.query.filter(User.name == name).one().tweets
 
