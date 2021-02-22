@@ -8,8 +8,9 @@ from .twitter import add_or_update_user, update_all_users
 
 load_dotenv()
 
+
 def create_app():
-    """Creating and configuring an instance 
+    """Creating and configuring an instance
     of the Flask application
     """
     app = Flask(__name__)  # name of the current python module
@@ -23,6 +24,7 @@ def create_app():
 
     @app.route('/')  # adds a specific url to an associated function
     def root():
+        # add_or_update_user('nasa')
         # DB.drop_all()
         # DB.create_all()
         # avoiding error since we are dropping all values - no duplicate users
